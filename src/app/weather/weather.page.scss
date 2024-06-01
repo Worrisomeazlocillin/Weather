@@ -1,0 +1,56 @@
+.list-container {
+    margin-top: 50px;
+}
+
+.container-weather .input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.img-weather {
+    display: block;
+    margin: auto;
+}
+
+.condition-weather {
+    text-align: center;
+    display: block;
+    color: gray;
+    margin-top: -10px;
+}
+
+.temp-weather { 
+    text-align: center;
+    font-size: 50px;
+    margin: 15px auto;
+}
+
+.city-weather { 
+    text-align: center;
+    font-size: 15px;
+    margin: 0;
+    color: gray;
+}
+
+.container-history {
+    margin-top: 40px;
+}
+
+.c1 {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    span {
+        color: gray;
+    }
+}
+
+.c2 {
+    display: flex;
+    flex-direction: column;
+
+    color: gray;
+}

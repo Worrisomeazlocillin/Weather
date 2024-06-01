@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class WeatherService {
 
   url = 'https://api.openweathermap.org/data/2.5/';
-  key = 'b5342501d5a39c7c50b1458790e757dc';
+  key = '7e1f260cf26c838a9cfc5e910fc9c894';
   city = 'Sleman';
 
   constructor(private http: HttpClient) { }

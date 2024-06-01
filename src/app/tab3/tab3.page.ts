@@ -7,6 +7,10 @@ import { Component } from '@angular/core';
 })
 export class Tab3Page {
 
-  constructor() {}
+  public fav;
+  constructor() {
+    this.fav = JSON.parse(localStorage.getItem('fav') ?? '{}');
+    console.log(this.fav);
+  }
 
 }

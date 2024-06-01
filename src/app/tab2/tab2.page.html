@@ -14,17 +14,26 @@
   </ion-header>
 
   <ion-list>
-    <ion-item *ngFor="let item of forecast.list">
-      <ion-label>
-        <h2>{{item.weather[0].description}}</h2>
-        <p>{{ formatDate(item.dt_txt)}}</p>
-      </ion-label>
-      <ion-text color="success" class="ion-text-end">
-        <h2>{{item.main.temp}}°C</h2>
-      </ion-text>
-      <ion-avatar slot="start">
-        <img src="https://openweathermap.org/img/wn/{{item.weather[0].icon}}@2x.png" alt="">
-      </ion-avatar>
+    <ion-item *ngFor="let weather of whList"> <!-- gunakan "weather" sebagai variabel iterasi -->
+      <ion-grid (click)="detailpage(weather)"> <!-- gunakan "weather" sebagai argumen fungsi "detailpage" -->
+        <ion-row *ngFor="let daily of weather.daily"> <!-- gunakan "daily" sebagai variabel iterasi -->
+          <ion-col size="2">
+            <img src="http://openweathermap.org/img/wn/{{daily.weather[0].icon}}@2x.png" height="55px"/> <!-- gunakan "daily.weather[0].icon" untuk mendapatkan ikon cuaca -->
+          </ion-col> 
+          <ion-col size="6">
+            <ion-label>
+              {{daily.weather[0].main}} - {{daily.weather[0].description}}<br/>
+              <small>{{weather.dt | date:'dd MMM yyyy - HH:mm '}}</small> <!-- gunakan "weather.dt" untuk mendapatkan waktu -->
+            </ion-label>
+          </ion-col>
+          <ion-col size="4" class="ion-text-right">
+            <ion-label color="success">
+              {{daily.temp.day}} °C<br/>
+              <small>{{daily.temp.min}} ~ {{daily.temp.max}} °C</small> <!-- gunakan "daily.temp.min" dan "daily.temp.max" untuk mendapatkan suhu minimum dan maksimum -->
+            </ion-label>
+          </ion-col> 
+        </ion-row>
+      </ion-grid>
     </ion-item>
   </ion-list>
 </ion-content>
